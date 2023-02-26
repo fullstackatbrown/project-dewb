@@ -1,10 +1,8 @@
 import { StyleSheet, Text, View, TextInput } from 'react-native'
 import React from 'react'
-import { StylesContext } from '@material-ui/styles'
 import { useState} from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import { Image, TouchableOpacity } from 'react-native'
-import { fontStyle } from '@mui/system'
 
 const SignUp = ({ navigation }) => {
     const [name, setName] = useState("");
