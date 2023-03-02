@@ -1,11 +1,10 @@
 {
   "expo": {
-    "name": "RNnodeMongo",
-    "slug": "RNnodeMongo",
+    "name": "wp-clone",
+    "slug": "wp-clone",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
@@ -24,8 +23,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "com.catherinekim123.RNnodeMongo"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
