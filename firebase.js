@@ -7,12 +7,12 @@ import {
 import { getStorage } from "firebase/storage";
 import { initializeFirestore } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyCtiSqB_puAJf0OUxdqkjgs5WUAp14XAp8",
-  authDomain: "tester-dewb.firebaseapp.com",
-  projectId: "tester-dewb",
-  storageBucket: "tester-dewb.appspot.com",
-  messagingSenderId: "29606429538",
-  appId: "1:29606429538:web:3235a2dd531e426db1623b"
+  apiKey: "AIzaSyCzds23y_0jtE9cKK5zsJIeRDPVupy7zhs",
+  authDomain: "dewb-development.firebaseapp.com",
+  projectId: "dewb-development",
+  storageBucket: "dewb-development.appspot.com",
+  messagingSenderId: "1086985921802",
+  appId: "1:1086985921802:web:fa5efb9378674567b506f3"
 };
 
 export const app = initializeApp(firebaseConfig);
