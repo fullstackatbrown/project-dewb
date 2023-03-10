@@ -29,12 +29,12 @@ export default function SignIn() {
       }}
     >
       <Text
-        style={{ color: colors.foreground, fontSize: 24, marginBottom: 20 }}
+        style={{ color: colors.iconGray, fontSize: 24, marginBottom: 20 }}
       >
-        Welcome to Whatsapp
+        Welcome to DEWB
       </Text>
       <Image
-        source={require("../assets/welcome-img.png")}
+        source={require("../assets/dewb_logo.png")}
         style={{ width: 180, height: 180 }}
         resizeMode="cover"
       />
@@ -46,6 +46,17 @@ export default function SignIn() {
           style={{
             borderBottomColor: colors.primary,
             borderBottomWidth: 2,
+            width: 200,
+          }}
+        />
+        <TextInput
+          placeholder="Phone"
+          value={email}
+          onChangeText={setEmail}
+          style={{
+            borderBottomColor: colors.primary,
+            borderBottomWidth: 2,
+            marginTop: 20,
             width: 200,
           }}
         />
