@@ -41,16 +41,6 @@ export default function SignIn() {
       />
       <View style={{ marginTop: 20 }}>
         <TextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
-          style={{
-            borderBottomColor: colors.tertiary,
-            borderBottomWidth: 2,
-            width: 250,
-          }}
-        />
-        <TextInput
           placeholder="Phone"
           value={email}
           onChangeText={setEmail}
