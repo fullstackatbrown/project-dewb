@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app";
 import {
   getAuth,
+  signInWithPhoneNumber,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
@@ -28,3 +29,9 @@ export function signIn(email, password) {
 export function signUp(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
 }
+/*export function signIn(phone) {
+  return signInWithPhoneNumber(auth, phone, RecaptchaVerifier);
+}*/
+/*export function signUp(phone, password) {
+  return createUserWithEmailAndPassword(auth, phone, password);
+}*/

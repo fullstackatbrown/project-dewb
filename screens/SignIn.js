@@ -5,7 +5,6 @@ import Context from "../context/Context";
 import { signIn, signUp } from "../firebase";
 export default function SignIn() {
   const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [mode, setMode] = useState("signUp");
   const {
@@ -30,25 +29,24 @@ export default function SignIn() {
       }}
     >
       <Text
-        style={{ color: colors.primary, fontSize: 32, marginBottom: 10 }}
+        style={{ color: colors.primary, fontSize: 32, marginBottom: 20 }}
       >
         Welcome to DEWB
       </Text>
       <Image
         source={require("../assets/dewb_logo.png")}
-        style={{ width: 180, height: 150 }}
+        style={{ width: 180, height: 180 }}
         resizeMode="cover"
       />
       <View style={{ marginTop: 20 }}>
         <TextInput
-          placeholder="Phone"
+          placeholder="Email"
           value={email}
           onChangeText={setEmail}
           style={{
             borderBottomColor: colors.tertiary,
             borderBottomWidth: 2,
-            marginTop: 20,
-            width: 250,
+            width: 200,
           }}
         />
         <TextInput
@@ -59,7 +57,7 @@ export default function SignIn() {
           style={{
             borderBottomColor: colors.tertiary,
             borderBottomWidth: 2,
-            width: 250,
+            width: 200,
             marginTop: 20,
           }}
         />
@@ -67,7 +65,7 @@ export default function SignIn() {
           <Button
             title={mode === "signUp" ? "Sign Up" : "Sign in"}
             disabled={!password || !email}
-            color={colors.primary}
+            color={colors.tertiary}
             onPress={handlePress}
           />
         </View>
