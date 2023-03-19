@@ -23,15 +23,18 @@ export const db = initializeFirestore(app, {
   experimentalForceLongPolling: true,
 });
 
-export function signIn(email, password) {
+/*export function signIn(email, password) {
   return signInWithEmailAndPassword(auth, email, password);
 }
 export function signUp(email, password) {
   return createUserWithEmailAndPassword(auth, email, password);
-}
-/*export function signIn(phone) {
-  return signInWithPhoneNumber(auth, phone, RecaptchaVerifier);
 }*/
+export function signIn(phone) {
+  return signInWithPhoneNumber(auth, phone, RecaptchaVerifier);
+}
+export function signUp(phone) {
+  return signUpWithPhoneNumber(auth, phone, RecaptchaVerifier);
+}
 /*export function signUp(phone, password) {
   return createUserWithEmailAndPassword(auth, phone, password);
 }*/

@@ -4,8 +4,7 @@ import { TouchableOpacity } from "react-native-gesture-handler";
 import Context from "../context/Context";
 import { signIn, signUp } from "../firebase";
 export default function SignIn() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
   const [mode, setMode] = useState("signUp");
   const {
     theme: { colors },
@@ -13,10 +12,10 @@ export default function SignIn() {
 
   async function handlePress() {
     if (mode === "signUp") {
-      await signUp(email, password);
+      await signUp(phone);
     }
     if (mode === "signIn") {
-      await signIn(email, password);
+      await signIn(phone);
     }
   }
   return (
@@ -29,43 +28,32 @@ export default function SignIn() {
       }}
     >
       <Text
-        style={{ color: colors.primary, fontSize: 32, marginBottom: 20 }}
+        style={{ color: colors.primary, fontSize: 32, marginBottom: 10 }}
       >
         Welcome to DEWB
       </Text>
       <Image
         source={require("../assets/dewb_logo.png")}
-        style={{ width: 180, height: 180 }}
+        style={{ width: 180, height: 150 }}
         resizeMode="cover"
       />
       <View style={{ marginTop: 20 }}>
         <TextInput
-          placeholder="Email"
-          value={email}
-          onChangeText={setEmail}
+          placeholder="Phone"
+          value={phone}
+          onChangeText={setPhone}
           style={{
             borderBottomColor: colors.tertiary,
             borderBottomWidth: 2,
-            width: 200,
-          }}
-        />
-        <TextInput
-          placeholder="Password"
-          value={password}
-          onChangeText={setPassword}
-          secureTextEntry={true}
-          style={{
-            borderBottomColor: colors.tertiary,
-            borderBottomWidth: 2,
-            width: 200,
             marginTop: 20,
+            width: 250,
           }}
         />
         <View style={{ marginTop: 20 }}>
           <Button
             title={mode === "signUp" ? "Sign Up" : "Sign in"}
-            disabled={!password || !email}
-            color={colors.tertiary}
+            disabled={!phone}
+            color={colors.primary}
             onPress={handlePress}
           />
         </View>
