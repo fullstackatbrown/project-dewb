@@ -29,7 +29,7 @@ export default function SignIn() {
       }}
     >
       <Text
-        style={{ color: colors.primary, fontSize: 32, marginBottom: 20 }}
+        style={{ color: colors.iconGray, fontSize: 24, marginBottom: 20 }}
       >
         Welcome to DEWB
       </Text>
@@ -44,8 +44,19 @@ export default function SignIn() {
           value={email}
           onChangeText={setEmail}
           style={{
-            borderBottomColor: colors.tertiary,
+            borderBottomColor: colors.primary,
             borderBottomWidth: 2,
+            width: 200,
+          }}
+        />
+        <TextInput
+          placeholder="Phone"
+          value={email}
+          onChangeText={setEmail}
+          style={{
+            borderBottomColor: colors.primary,
+            borderBottomWidth: 2,
+            marginTop: 20,
             width: 200,
           }}
         />
@@ -55,7 +66,7 @@ export default function SignIn() {
           onChangeText={setPassword}
           secureTextEntry={true}
           style={{
-            borderBottomColor: colors.tertiary,
+            borderBottomColor: colors.primary,
             borderBottomWidth: 2,
             width: 200,
             marginTop: 20,
@@ -65,7 +76,7 @@ export default function SignIn() {
           <Button
             title={mode === "signUp" ? "Sign Up" : "Sign in"}
             disabled={!password || !email}
-            color={colors.tertiary}
+            color={colors.secondary}
             onPress={handlePress}
           />
         </View>
