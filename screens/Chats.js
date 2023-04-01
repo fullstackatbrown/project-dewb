@@ -24,7 +24,7 @@ export default function Chats() {
           .participants.find((p) => p.email !== currentUser.email),
       }));
       setUnfilteredRooms(parsedChats);
-      setRooms(parsedChats.filter((doc) => doc.lastMessage));
+      setRooms(parsedChats.filter((doc) => doc.lastMessage))
     });
     return () => unsubscribe();
   }, []);

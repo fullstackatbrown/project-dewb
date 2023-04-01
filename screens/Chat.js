@@ -104,6 +104,7 @@ export default function Chat() {
           return { ...message, createdAt: message.createdAt.toDate() };
         })
         .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
+        console.log(messagesFirestore);
       appendMessages(messagesFirestore);
     });
     return () => unsubscribe();

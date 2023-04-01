@@ -12,6 +12,7 @@ import Context from "./context/Context";
 import Profile from "./screens/Profile";
 import Chats from "./screens/Chats";
 import Photo from "./screens/Photo";
+import Notifications from "./screens/Notifications";
 import { Ionicons } from "@expo/vector-icons";
 import Contacts from "./screens/Contacts";
 import Chat from './screens/Chat'
@@ -120,6 +121,7 @@ function Home() {
     >
       <Tab.Screen name="photo" component={Photo} />
       <Tab.Screen name="chats" component={Chats} />
+      <Tab.Screen name="notifications" component={Notifications} />
     </Tab.Navigator>
   );
 }
