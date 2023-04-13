@@ -1,4 +1,3 @@
-// @refresh reset
 import { useRoute } from "@react-navigation/native";
 import "react-native-get-random-values";
 import { nanoid } from "nanoid";
@@ -104,7 +103,7 @@ export default function Chat() {
           return { ...message, createdAt: message.createdAt.toDate() };
         })
         .sort((a, b) => b.createdAt.getTime() - a.createdAt.getTime());
-        console.log(messagesFirestore);
+        
       appendMessages(messagesFirestore);
     });
     return () => unsubscribe();
@@ -112,19 +111,28 @@ export default function Chat() {
 
   const appendMessages = useCallback(
     (messages) => {
-      setMessages((previousMessages) =>
-        GiftedChat.append(previousMessages, messages)
-      );
-    },
-    [messages]
+      setMessages((previousMessages) => {
+          GiftedChat.append(previousMessages, messages)
+      }
+      )
+  },
+  [messages]
   );
 
   async function onSend(messages = []) {
-    const writes = messages.map((m) => addDoc(roomMessagesRef, m));
+    // setMessages(previousMessages => GiftedChat.append(previousMessages, messages))
+    const writes = messages.map((m) => {
+      addDoc(roomMessagesRef, m)
+    });
     const lastMessage = messages[messages.length - 1];
     writes.push(updateDoc(roomRef, { lastMessage }));
+    console.log(lastMessage)
+    console.log(messages)
     await Promise.all(writes);
+    // setMessages(previousMessages => GiftedChat.append(previousMessages, lastMessage))
+
   }
+
 
   async function sendImage(uri, roomPath) {
     const { url, fileName } = await uploadImage(
@@ -153,14 +161,15 @@ export default function Chat() {
   }
 
   return (
+    
     <ImageBackground
       resizeMode="cover"
       source={require("../assets/chatbg.png")}
       style={{ flex: 1 }}
     >
       <GiftedChat
-        onSend={onSend}
         messages={messages}
+        onSend={onSend}
         user={senderUser}
         renderAvatar={null}
         renderActions={(props) => (

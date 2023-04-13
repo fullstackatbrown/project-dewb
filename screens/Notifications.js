@@ -29,8 +29,8 @@ export default function Notifications() {
     //   console.log(parsedNotifs)
       setNotifRooms(parsedNotifs.filter((doc) => doc.lastNotif))
     //   console.log(parsedNotifs.filter((doc) => doc.lastNotif));
-    console.log("this is notifRooms")
-      console.log(notifRooms)
+    // console.log("this is notifRooms")
+      // console.log(notifRooms)
     });
     return () => unsubscribe();
   }, []);
@@ -55,7 +55,7 @@ export default function Notifications() {
           user={getUserB(notifRoom.userB, contacts)}
         />
       ))}
-      {/* <ContactsFloatingIcon /> */}
+      <ContactsFloatingIcon />
     </View>
   );
 }
