@@ -16,6 +16,8 @@ import { Ionicons } from "@expo/vector-icons";
 import Contacts from "./screens/Contacts";
 import Chat from './screens/Chat'
 import ChatHeader from './components/ChatHeader'
+import LandingPage from './screens/LandingPage';
+
 LogBox.ignoreLogs([
   "Setting a timer",
   "AsyncStorage has been extracted from react-native core and will be removed in a future release.",
@@ -55,11 +57,11 @@ function App() {
         <Stack.Navigator
           screenOptions={{
             headerStyle: {
-              backgroundColor: colors.foreground,
+              backgroundColor: colors.topheader,
               shadowOpacity: 0,
               elevation: 0,
             },
-            headerTintColor: colors.white,
+            headerTintColor: colors.topheader,
           }}
         >
           {!currUser.displayName && (
@@ -71,7 +73,7 @@ function App() {
           )}
           <Stack.Screen
             name="home"
-            options={{ title: "Whatsapp" }}
+            options={{ title: "" }}
             component={Home}
           />
           <Stack.Screen
@@ -94,15 +96,15 @@ function Home() {
       screenOptions={({ route }) => {
         return {
           tabBarLabel: () => {
-            if (route.name === "photo") {
-              return <Ionicons name="camera" size={20} color={colors.white} />;
-            } else {
+            // if (route.name === "photo") {
+            //   return <Ionicons name="camera" size={20} color={colors.white} />;
+            // } else {
               return (
-                <Text style={{ color: colors.white }}>
+                <Text style={{ color: "black" }}>
                   {route.name.toLocaleUpperCase()}
                 </Text>
               );
-            }
+            // }
           },
           tabBarShowIcon: true,
           tabBarLabelStyle: {
@@ -112,13 +114,16 @@ function Home() {
             backgroundColor: colors.white,
           },
           tabBarStyle: {
-            backgroundColor: colors.foreground,
+            backgroundColor: colors.background,
+            height: 80,
           },
         };
       }}
-      initialRouteName="chats"
+      initialRouteName="landingpage"
+      tabBarPosition="bottom"
     >
-      <Tab.Screen name="photo" component={Photo} />
+      {/* <Tab.Screen name="photo" component={Photo} /> */}
+      <Tab.Screen name="landingpage" component={LandingPage} />
       <Tab.Screen name="chats" component={Chats} />
     </Tab.Navigator>
   );
