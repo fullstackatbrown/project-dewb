@@ -48,8 +48,8 @@ export async function uploadImage(uri, path, fName) {
 const palette = {
   paleBeige: "#F5EEE2",
   brightYellow: "#FFCF24",
-  green: "#25d366",
-  lime: "#dcf8c6",
+  purple: "#CA98E1",
+  lightGreen: "#B3BC4D",
   skyblue: "#34b7f1",
   blue: "#4169e1",
   smokeWhite: "#ece5dd",
@@ -66,10 +66,11 @@ export const theme = {
     foreground: palette.brightYellow,
     primary: palette.paleBeige,
     tertiary: palette.blue,
-    secondary: palette.green,
+    secondary: palette.purple,
     white: palette.white,
     text: palette.gray,
     secondaryText: palette.lightGray,
     iconGray: palette.iconGray,
+    notif: palette.lightGreen,
   },
 };

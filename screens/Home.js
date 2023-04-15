@@ -9,7 +9,7 @@ import useContacts from "../hooks/useHooks";
 import Context from "../context/Context"
 import { ScrollView } from "react-native-gesture-handler";
 
-export default function LandingPage() {
+export default function Home() {
   const {
     theme: { colors },
   } = useContext(Context);

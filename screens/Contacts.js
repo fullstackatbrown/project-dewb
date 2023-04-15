@@ -11,6 +11,7 @@ export default function Contacts() {
   const contacts = useContacts();
   const route = useRoute();
   const image = route.params && route.params.image;
+
   return (
     <FlatList
       style={{ flex: 1, padding: 10 }}
@@ -39,14 +40,14 @@ function ContactPreview({ contact, image }) {
     return () => unsubscribe();
   }, []);
   return (
-    <ListItem
-      style={{ marginTop: 7 }}
-      type="contacts"
-      user={user}
-      image={image}
-      room={unfilteredRooms.find((room) =>
-        room.participantsArray.includes(contact.email)
-      )}
-    />
+      <ListItem
+        style={{ marginTop: 7 }}
+        type="contacts"
+        user={user}
+        image={image}
+        room={unfilteredRooms.find((room) =>
+          room.participantsArray.includes(contact.email)
+        )}
+      />
   );
 }

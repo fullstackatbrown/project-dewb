@@ -24,11 +24,13 @@ import {
 import {
   Actions,
   Bubble,
-  GiftedChat,
+  // GiftedChat,
   InputToolbar,
 } from "react-native-gifted-chat";
 import { pickImage, uploadImage } from "../utils";
 import ImageView from "react-native-image-viewing";
+import { GiftedChat } from 'react-native-gifted-chat';
+
 
 const randomId = nanoid();
 
@@ -110,13 +112,9 @@ export default function Chat() {
   }, []);
 
   const appendMessages = useCallback(
-    (messages) => {
-      setMessages((previousMessages) =>
-        GiftedChat.append(previousMessages, messages)
-      );
-    },
-    [messages]
-  );
+    (messages = []) => {
+      setMessages(previousMessages => GiftedChat.append(previousMessages, messages)
+    )}, []);
 
   async function onSend(messages = []) {
     const writes = messages.map((m) => addDoc(roomMessagesRef, m));
@@ -152,11 +150,7 @@ export default function Chat() {
   }
 
   return (
-    <ImageBackground
-      resizeMode="cover"
-      source={require("../assets/chatbg.png")}
-      style={{ flex: 1 }}
-    >
+    
       <GiftedChat
         onSend={onSend}
         messages={messages}
@@ -267,6 +261,5 @@ export default function Chat() {
           );
         }}
       />
-    </ImageBackground>
   );
 }

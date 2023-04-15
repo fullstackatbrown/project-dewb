@@ -10,6 +10,9 @@ export default function Chats() {
   const { currentUser } = auth;
   const { rooms, setRooms, setUnfilteredRooms } = useContext(GlobalContext);
   const contacts = useContacts();
+  const {
+    theme: { colors },
+  } = useContext(GlobalContext);
   const chatsQuery = query(
     collection(db, "rooms"),
     where("participantsArray", "array-contains", currentUser.email)
@@ -38,7 +41,8 @@ export default function Chats() {
   }
 
   return (
-    <View style={{ flex: 1, padding: 5, paddingRight: 10 }}>
+    <View style={{ flex: 1, padding: 5, paddingRight: 10, backgroundColor: colors.background}}>
+      <Text style={{color: colors.secondary}}>YOUR MESSAGES</Text>
       {rooms.map((room) => (
         <ListItem
           type="chat"

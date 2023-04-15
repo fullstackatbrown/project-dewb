@@ -18,11 +18,11 @@ export default function ListItem({
     theme: { colors },
   } = useContext(GlobalContext);
   return (
-    <TouchableOpacity
-      style={{ height: 80, ...style }}
-      onPress={() => navigation.navigate("chat", { user, room, image })}
-    >
-      <Grid style={{ maxHeight: 80, backgroundColor: colors.secondary, borderRadius: 20}}>
+    // <TouchableOpacity
+    //   style={{ height: 80, ...style }}
+    //   onPress={() => navigation.navigate("chat", { user, room, image })}
+    // >
+      <Grid style={{ maxHeight: 80, backgroundColor: colors.notif, borderRadius: 20}}>
         <Col
           style={{ width: 80, alignItems: "center", justifyContent: "center" }}
         >
@@ -54,6 +54,6 @@ export default function ListItem({
           )}
         </Col>
       </Grid>
-    </TouchableOpacity>
+    // </TouchableOpacity>
   );
 }

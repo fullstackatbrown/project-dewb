@@ -16,7 +16,8 @@ import { Ionicons } from "@expo/vector-icons";
 import Contacts from "./screens/Contacts";
 import Chat from './screens/Chat'
 import ChatHeader from './components/ChatHeader'
-import LandingPage from './screens/LandingPage';
+import Home from './screens/Home';
+import Notifications from "./screens/Notifications";
 
 LogBox.ignoreLogs([
   "Setting a timer",
@@ -50,7 +51,7 @@ function App() {
   return (
     <NavigationContainer>
       {!currUser ? (
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Navigator screenOptions={{ headerShown: false}}>
           <Stack.Screen name="signIn" component={SignIn} />
         </Stack.Navigator>
       ) : (
@@ -72,14 +73,15 @@ function App() {
             />
           )}
           <Stack.Screen
-            name="home"
+            name="postSignUp"
             options={{ title: "" }}
-            component={Home}
+            component={PostSignUp}
           />
           <Stack.Screen
             name="contacts"
             options={{ title: "Select Contacts" }}
             component={Contacts}
+            // color={colors.notif}
           />
           <Stack.Screen name="chat" component={Chat} options={{headerTitle: (props) => <ChatHeader {...props} />}}/>
         </Stack.Navigator>
@@ -87,7 +89,7 @@ function App() {
     </NavigationContainer>
   );
 }
-function Home() {
+function PostSignUp() {
   const {
     theme: { colors },
   } = useContext(Context);
@@ -119,12 +121,13 @@ function Home() {
           },
         };
       }}
-      initialRouteName="landingpage"
+      initialRouteName="home"
       tabBarPosition="bottom"
     >
       {/* <Tab.Screen name="photo" component={Photo} /> */}
-      <Tab.Screen name="landingpage" component={LandingPage} />
+      <Tab.Screen name="home" component={Home} />
       <Tab.Screen name="chats" component={Chats} />
+      <Tab.Screen name="notifications" component={Notifications}/>
     </Tab.Navigator>
   );
 }
