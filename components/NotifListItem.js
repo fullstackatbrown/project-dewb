@@ -28,7 +28,7 @@ export default function ListItem({
         >
           <Avatar user={user} size={type === "contacts" ? 40 : 65} />
         </Col>
-        <Col style={{ marginLeft: 10 }}>
+        <Col style={{ marginLeft: 10 , marginRight: 10}}>
           <Row style={{ alignItems: "center" }}>
             <Col>
               <Text
@@ -39,7 +39,7 @@ export default function ListItem({
             </Col>
             {time && (
               <Col style={{ alignItems: "flex-end" }}>
-                <Text style={{ color: colors.secondaryText, fontSize: 11 }}>
+                <Text style={{ color: colors.text, fontSize: 11 }}>
                   {new Date(time.seconds * 1000).toLocaleDateString()}
                 </Text>
               </Col>
@@ -47,7 +47,7 @@ export default function ListItem({
           </Row>
           {description && (
             <Row style={{ marginTop: -5 }}>
-              <Text style={{ color: colors.secondaryText, fontSize: 13 }}>
+              <Text style={{ color: colors.text, fontSize: 13 }}>
                 {description}
               </Text>
             </Row>

@@ -56,7 +56,7 @@ export default function Profile() {
       updateProfile(user, userData),
       setDoc(doc(db, "users", user.uid), { ...userData, uid: user.uid }),
     ]);
-    navigation.navigate("home");
+    navigation.navigate("postSignUp");
   }
 
   async function handleProfilePicture() {
@@ -82,15 +82,16 @@ export default function Profile() {
           flex: 1,
           paddingTop: Constants.statusBarHeight + 20,
           padding: 20,
+          backgroundColor: colors.background,
         }}
       >
-        <Text style={{ fontSize: 22, color: colors.foreground }}>
+        <Text style={{ fontSize: 25, color: colors.darkpurple }}>
           Profile Info
         </Text>
-        <Text style={{ fontSize: 14, color: colors.text, marginTop: 20 }}>
-          Please provide your name and an optional profile photo
-        </Text>
-        <TouchableOpacity
+        {/* <Text style={{ fontSize: 14, color: colors.darkgreen, marginTop: 10}}>
+          Please provide your name
+        </Text> */}
+        {/* <TouchableOpacity
           onPress={handleProfilePicture}
           style={{
             marginTop: 30,
@@ -101,8 +102,8 @@ export default function Profile() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        >
-          {!selectedImage ? (
+        > */}
+          {/* {!selectedImage ? (
             <MaterialCommunityIcons
               name="camera-plus"
               color={colors.iconGray}
@@ -113,14 +114,15 @@ export default function Profile() {
               source={{ uri: selectedImage }}
               style={{ width: "100%", height: "100%", borderRadius: 120 }}
             />
-          )}
-        </TouchableOpacity>
+          )} */}
+        {/* </TouchableOpacity> */}
         <TextInput
-          placeholder="Type your name"
+          placeholder="Please provide your name"
+          placeholderTextColor={colors.darkgreen}
           value={displayName}
           onChangeText={setDisplayName}
           style={{
-            borderBottomColor: colors.primary,
+            borderBottomColor: colors.darkgreen,
             marginTop: 40,
             borderBottomWidth: 2,
             width: "100%",
@@ -129,7 +131,7 @@ export default function Profile() {
         <View style={{ marginTop: "auto", width: 80 }}>
           <Button
             title="Next"
-            color={colors.secondary}
+            color={colors.darkpurple}
             onPress={handlePress}
             disabled={!displayName}
           />

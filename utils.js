@@ -57,6 +57,8 @@ const palette = {
   gray: "#3C3C3C",
   lightGray: "#757575",
   iconGray: "#717171",
+  darkPurple: "#871F78",
+  darkGreen: "#006400"
 };
 
 export const theme = {
@@ -72,5 +74,7 @@ export const theme = {
     secondaryText: palette.lightGray,
     iconGray: palette.iconGray,
     notif: palette.lightGreen,
+    darkpurple: palette.darkPurple,
+    darkgreen: palette.darkGreen
   },
 };

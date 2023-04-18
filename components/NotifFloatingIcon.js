@@ -18,7 +18,7 @@ export default function NotifFloatingIcon() {
         borderRadius: 60,
         width: 60,
         height: 60,
-        backgroundColor: colors.notif,
+        backgroundColor: colors.darkgreen,
         alignItems: "center",
         justifyContent: "center",
       }}

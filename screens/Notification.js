@@ -24,11 +24,13 @@ import {
 import {
   Actions,
   Bubble,
-  GiftedChat,
+  // GiftedChat,
   InputToolbar,
 } from "react-native-gifted-chat";
 import { pickImage, uploadImage } from "../utils";
 import ImageView from "react-native-image-viewing";
+import { GiftedChat } from 'react-native-gifted-chat';
+
 
 const randomId = nanoid();
 
@@ -56,8 +58,8 @@ export default function Chat() {
 
   const roomId = room ? room.id : randomId;
 
-  const roomRef = doc(db, "rooms", roomId);
-  const roomMessagesRef = collection(db, "rooms", roomId, "messages");
+  const roomRef = doc(db, "notifications", roomId);
+  const roomMessagesRef = collection(db, "notifications", roomId, "messages");
 
   useEffect(() => {
     (async () => {
@@ -142,8 +144,8 @@ export default function Chat() {
 
   async function handlePhotoPicker() {
     const result = await pickImage();
-    if (!result.canceled) {
-      await sendImage(result.assets.uri);
+    if (!result.cancelled) {
+      await sendImage(result.uri);
     }
   }
 
@@ -154,22 +156,22 @@ export default function Chat() {
         messages={messages}
         user={senderUser}
         renderAvatar={null}
-        // renderActions={(props) => (
-        //   <Actions
-        //     {...props}
-        //     containerStyle={{
-        //       position: "absolute",
-        //       right: 50,
-        //       bottom: 5,
-        //       zIndex: 9999,
-        //     }}
-        //     onPressActionButton={handlePhotoPicker}
-        //     icon={() => (
-        //       <Ionicons name="camera" size={30} color={colors.iconGray} />
-        //     )}
-        //   />
-        // )}
-        timeTextStyle={{ left: {color: colors.text }, right: { color: colors.white } }}
+        renderActions={(props) => (
+          <Actions
+            {...props}
+            containerStyle={{
+              position: "absolute",
+              right: 50,
+              bottom: 5,
+              zIndex: 9999,
+            }}
+            onPressActionButton={handlePhotoPicker}
+            icon={() => (
+              <Ionicons name="camera" size={30} color={colors.iconGray} />
+            )}
+          />
+        )}
+        timeTextStyle={{ right: { color: colors.iconGray } }}
         renderSend={(props) => {
           const { text, messageIdGenerator, user, onSend } = props;
           return (
@@ -178,7 +180,7 @@ export default function Chat() {
                 height: 40,
                 width: 40,
                 borderRadius: 40,
-                backgroundColor: colors.darkpurple,
+                backgroundColor: colors.primary,
                 alignItems: "center",
                 justifyContent: "center",
                 marginBottom: 5,
@@ -196,7 +198,7 @@ export default function Chat() {
                 }
               }}
             >
-              <Ionicons name="send" size={20} color={colors.background} />
+              <Ionicons name="send" size={20} color={colors.white} />
             </TouchableOpacity>
           );
         }}
@@ -215,20 +217,20 @@ export default function Chat() {
         renderBubble={(props) => (
           <Bubble
             {...props}
-            textStyle={{ left: { color: colors.text }, right: { color: colors.white} }}
+            textStyle={{ right: { color: colors.text } }}
             wrapperStyle={{
               left: {
                 backgroundColor: colors.white,
               },
               right: {
-                backgroundColor: colors.darkpurple,
+                backgroundColor: colors.tertiary,
               },
             }}
           />
         )}
         renderMessageImage={(props) => {
           return (
-            <View style={{ borderRadius: 15, padding: 2}}>
+            <View style={{ borderRadius: 15, padding: 2 }}>
               <TouchableOpacity
                 onPress={() => {
                   setModalVisible(true);

@@ -42,7 +42,7 @@ export default function Chats() {
 
   return (
     <View style={{ flex: 1, padding: 5, paddingRight: 10, backgroundColor: colors.background}}>
-      <Text style={{color: colors.secondary}}>YOUR MESSAGES</Text>
+      <Text style={{color: colors.darkpurple, fontSize: 23, fontWeight: "bold", textAlign: "center", marginBottom: 10}}>YOUR MESSAGES</Text>
       {rooms.map((room) => (
         <ListItem
           type="chat"

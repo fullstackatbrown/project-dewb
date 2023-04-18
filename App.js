@@ -18,6 +18,7 @@ import Chat from './screens/Chat'
 import ChatHeader from './components/ChatHeader'
 import Home from './screens/Home';
 import Notifications from "./screens/Notifications";
+import Notification from "./screens/Notification";
 
 LogBox.ignoreLogs([
   "Setting a timer",
@@ -83,7 +84,8 @@ function App() {
             component={Contacts}
             // color={colors.notif}
           />
-          <Stack.Screen name="chat" component={Chat} options={{headerTitle: (props) => <ChatHeader {...props} />}}/>
+          <Stack.Screen name="chat" component={Chat} options={{headerTitle: (props) => <ChatHeader {...props } />}}/>
+          <Stack.Screen name="notification" component={Notification} options={{headerTitle: (props) => <ChatHeader {...props} />}}/>
         </Stack.Navigator>
       )}
     </NavigationContainer>
@@ -139,6 +141,7 @@ function Main() {
     require("./assets/user-icon.png"),
     require("./assets/welcome-img.png")
   );
+
   if (!assets) {
     return <Text>Loading ..</Text>;
   }

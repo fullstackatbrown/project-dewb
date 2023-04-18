@@ -45,7 +45,7 @@ export default function Notifications() {
   
     return (
       <View style={{ flex: 1, padding: 5, paddingRight: 10, backgroundColor: colors.background }}>
-        <Text style={{color: colors.notif}}>YOUR NOTIFICATIONS</Text>
+        <Text style={{color: colors.darkgreen, fontSize: 23, fontWeight: "bold", textAlign: "center", marginBottom: 10}}>YOUR NOTIFICATIONS</Text>
         {notifRooms.map((notifRoom) => (
           <NotifListItem
             type="notif"
