@@ -1,7 +1,7 @@
 # Ghana Health Service Home Visits Tracker
 
 ## Overview
-Ghana Health Service Home Visits Tracker is a mobile application engineered for DEWB (Doctors and Engineers Without Border). GHS Home Visits Tracker aims to facilitate maternal and child healthcare access in rural Ghana, expanding access to communication, notificatiions, prescriptions, and appointments. The app is ultimately a combination of a specialized electronic health record and telehealth service for health providers, community health workers, and patients.
+Ghana Health Service Home Visits Tracker is a mobile application engineered to facilitate maternal and child healthcare access in rural Ghana, expanding access to communication, notifications, prescriptions, and appointments. The app functions as a combination of specialized electronic health records and telehealth services for health providers, community health workers, and patients.
 
 ## App Features
 
