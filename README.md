@@ -5,7 +5,7 @@ Ghana Health Service Home Visits Tracker is a mobile application developed for D
 
 ## App Features
 
-|  Sign In Page   |  Home Updates   |Physician Message|  Chat Features  |  Notifications  |
+| Sign In/Up Auth | Community Notices | Physician Messaging |  1-1 Chat Features  | Notifications |
 | --- | --- | --- | --- | --- |
 | <img src="https://user-images.githubusercontent.com/64095665/236744176-d8179ca7-3e38-4063-9501-190c4cd5d873.PNG" width="200px" height="auto"> | <img src="https://user-images.githubusercontent.com/64095665/236744218-aad6565c-2d62-422e-9875-b7f63a6d9ff3.PNG" width="200px" height="auto"> | <img src="https://user-images.githubusercontent.com/64095665/236744295-ebaf6288-e8d0-4196-baac-f95c741a3dd9.PNG" width="200px" height="auto"> | <img src="https://user-images.githubusercontent.com/64095665/236744360-b831d7e4-8b98-4725-a213-9036bc995e39.PNG" width="200px" height="auto"> | <img src="https://user-images.githubusercontent.com/64095665/236744489-84c2557b-db23-498a-a491-eed1f3f87cc5.PNG" width="200px" height="auto"> |
 
